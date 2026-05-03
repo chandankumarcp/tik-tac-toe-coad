@@ -4,9 +4,17 @@ A simple **two-player Tic Tac Toe** game built with **pure Python** — no exter
 
 ## 📋 About
 
-This is a command-line implementation of the classic Tic Tac Toe game. Two players take turns marking spaces on a 3×3 grid. The player who places three of their marks in a horizontal, vertical, or diagonal row wins the game.
+This is a classic Tic Tac Toe game implemented in Python. Two players take turns marking spaces on a 3×3 grid. The player who places three of their marks in a horizontal, vertical, or diagonal row wins the game!
+
+The project includes two versions:
+- 🗒️ A plain Python script (`.txt` format)
+- 📓 An interactive **Jupyter Notebook** (`tic_tac_toe.ipynb`)
+
+---
 
 ## 🚀 How to Run
+
+### ▶️ Option 1 — Run the Python Script
 
 Make sure you have **Python 3** installed, then run:
 
@@ -14,10 +22,22 @@ Make sure you have **Python 3** installed, then run:
 python "tik tac toe game without any library.txt"
 ```
 
-> **Tip:** You can rename the file to `tictactoe.py` for convenience:
+> **Tip:** Rename the file to `tictactoe.py` for convenience:
 > ```bash
+> mv "tik tac toe game without any library.txt" tictactoe.py
 > python tictactoe.py
 > ```
+
+### 📓 Option 2 — Run the Jupyter Notebook
+
+Make sure you have **Jupyter** installed:
+
+```bash
+pip install notebook
+jupyter notebook tic_tac_toe.ipynb
+```
+
+---
 
 ## 🎯 How to Play
 
@@ -34,20 +54,31 @@ python "tik tac toe game without any library.txt"
 2. **Player X** goes first, followed by **Player O**.
 3. When prompted, enter the **position number** (0–8) where you want to place your mark.
 4. The first player to get **3 marks in a row** (horizontally, vertically, or diagonally) wins!
+5. If all 9 squares are filled with no winner, the game ends in a **draw**.
+
+---
 
 ## 🛠️ Features
 
 - ✅ Two-player turn-based gameplay
 - ✅ Real-time board display after every move
 - ✅ Automatic win detection (rows, columns, and diagonals)
+- ✅ Draw detection
 - ✅ No external libraries — pure Python only
+- ✅ Available as both a script and a Jupyter Notebook
+
+---
 
 ## 📁 Project Structure
 
 ```
 tik-tac-toe-coad/
-└── tik tac toe game without any library.txt   # Main game source code
+├── README.md                                      # Project documentation
+├── tic_tac_toe.ipynb                              # Jupyter Notebook version
+└── tik tac toe game without any library.txt       # Python script version
 ```
+
+---
 
 ## 🧑‍💻 Author
 
@@ -55,4 +86,4 @@ tik-tac-toe-coad/
 
 ---
 
-⭐ If you found this helpful, consider giving the repo a star!
+��� If you found this helpful, consider giving the repo a star!
