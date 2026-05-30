@@ -1,86 +1,103 @@
-# Tic Tac Toe 🎮
+# Tic Tac Toe
 
-A simple **two-player Tic Tac Toe** game built with **pure Python** — no external libraries required!
+A clean, production-ready command-line Tic Tac Toe game written in pure Python (stdlib only).
 
-## 📋 About
+## Features
 
-This is a classic Tic Tac Toe game implemented in Python. Two players take turns marking spaces on a 3×3 grid. The player who places three of their marks in a horizontal, vertical, or diagonal row wins!
+- Full input validation (non-numeric, out-of-range, already-taken cell)
+- Draw detection
+- Play-again loop
+- Structured as an importable Python package
+- Custom exceptions (`InvalidMoveError`, `CellTakenError`)
+- Type hints and docstrings throughout
+- Unit tests for all critical paths
+- `argparse` CLI with optional player names and log-level control
 
-The project includes two versions:
-- 🗒️ A plain Python script (`.txt` format)
-- 🐍 A clean Python script (`tictactoe.py`)
-- 📓 An interactive **Jupyter Notebook** (`tic_tac_toe.ipynb`)
+## Requirements
 
----
+- Python 3.9+
+- `pytest` (for running tests only)
 
-## 🚀 How to Run
+## How to Run
 
-### ▶️ Option 1 — Run the Python Script
+### Default player names
+```bash
+python cli.py
+```
 
-Make sure you have **Python 3** installed, then run:
+### Custom player names
+```bash
+python cli.py --player1 Alice --player2 Bob
+```
+
+### With verbose logging
+```bash
+python cli.py --log-level INFO
+```
+
+## How to Run Tests
 
 ```bash
-python tictactoe.py
+pip install pytest
+python -m pytest tests/ -v
 ```
 
-### 📓 Option 2 — Run the Jupyter Notebook
-
-Make sure you have **Jupyter** installed:
-
-```bash
-pip install notebook
-jupyter notebook tic_tac_toe.ipynb
-```
-
----
-
-## 🎯 How to Play
-
-1. The board positions are numbered **0 to 8** as shown below:
-
-```
-0 | 1 | 2
---|---|---
-3 | 4 | 5
---|---|---
-6 | 7 | 8
-```
-
-2. **Player X** goes first, followed by **Player O**.
-3. When prompted, enter the **position number** (0–8) where you want to place your mark.
-4. The first player to get **3 marks in a row** (horizontally, vertically, or diagonally) wins!
-5. If all 9 squares are filled with no winner, the game ends in a **draw**.
-
----
-
-## 🛠️ Features
-
-- ✅ Two-player turn-based gameplay
-- ✅ Real-time board display after every move
-- ✅ Automatic win detection (rows, columns, and diagonals)
-- ✅ Draw detection
-- ✅ No external libraries — pure Python only
-- ✅ Available as both a script and a Jupyter Notebook
-
----
-
-## 📁 Project Structure
+## Project Structure
 
 ```
 tik-tac-toe-coad/
-├── README.md                                      # Project documentation
-├── LICENSE                                        # MIT License
-├── tictactoe.py                                   # Clean Python script
-├── tic_tac_toe.ipynb                              # Jupyter Notebook version
-└── tik tac toe game without any library.txt       # Original Python script
+├── tictactoe/
+│   ├── __init__.py       # Package exports: Game, Player, GameState
+│   ├── board.py          # Board class - grid, win/draw detection
+│   ├── game.py           # Game class - main loop, input handling
+│   ├── players.py        # Player dataclass
+│   └── exceptions.py     # TicTacToeError, InvalidMoveError, CellTakenError
+├── tests/
+│   ├── __init__.py
+│   ├── test_board.py     # Board unit tests
+│   └── test_game.py      # Game unit tests
+├── cli.py                # CLI entry point
+├── requirements.txt
+├── README.md
+├── tictactoe.py          # Original script (kept for reference)
+└── tic_tac_toe.ipynb     # Original notebook (kept for reference)
 ```
 
----
+## Board Layout
 
-## 🧑‍💻 Author
+```
+ 0 | 1 | 2
+---|---|---
+ 3 | 4 | 5
+---|---|---
+ 6 | 7 | 8
+```
 
-**Chandan Kumar** — [@chandankumarcp](https://github.com/chandankumarcp)
+Enter the number of the cell you want to occupy when prompted.
 
----
+## Example Session
 
-⭐ If you found this helpful, consider giving the repo a star!
+```
+Welcome to Tic Tac Toe!
+Positions are numbered 0-8:
+ 0 | 1 | 2
+---|---|---
+ 3 | 4 | 5
+---|---|---
+ 6 | 7 | 8
+
+   |   |  
+---|---|---
+   |   |  
+---|---|---
+   |   |  
+Alice (X) - enter position (0-8): 4
+
+   |   |  
+---|---|---
+   | X |  
+---|---|---
+   |   |  
+Bob (O) - enter position (0-8): 0
+...
+```
