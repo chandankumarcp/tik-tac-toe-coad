@@ -4,10 +4,11 @@ A simple **two-player Tic Tac Toe** game built with **pure Python** — no exter
 
 ## 📋 About
 
-This is a classic Tic Tac Toe game implemented in Python. Two players take turns marking spaces on a 3×3 grid. The player who places three of their marks in a horizontal, vertical, or diagonal row wins the game!
+This is a classic Tic Tac Toe game implemented in Python. Two players take turns marking spaces on a 3×3 grid. The player who places three of their marks in a horizontal, vertical, or diagonal row wins!
 
 The project includes two versions:
 - 🗒️ A plain Python script (`.txt` format)
+- 🐍 A clean Python script (`tictactoe.py`)
 - 📓 An interactive **Jupyter Notebook** (`tic_tac_toe.ipynb`)
 
 ---
@@ -19,14 +20,8 @@ The project includes two versions:
 Make sure you have **Python 3** installed, then run:
 
 ```bash
-python "tik tac toe game without any library.txt"
+python tictactoe.py
 ```
-
-> **Tip:** Rename the file to `tictactoe.py` for convenience:
-> ```bash
-> mv "tik tac toe game without any library.txt" tictactoe.py
-> python tictactoe.py
-> ```
 
 ### 📓 Option 2 — Run the Jupyter Notebook
 
@@ -74,8 +69,10 @@ jupyter notebook tic_tac_toe.ipynb
 ```
 tik-tac-toe-coad/
 ├── README.md                                      # Project documentation
+├── LICENSE                                        # MIT License
+├── tictactoe.py                                   # Clean Python script
 ├── tic_tac_toe.ipynb                              # Jupyter Notebook version
-└── tik tac toe game without any library.txt       # Python script version
+└── tik tac toe game without any library.txt       # Original Python script
 ```
 
 ---
@@ -86,4 +83,4 @@ tik-tac-toe-coad/
 
 ---
 
-��� If you found this helpful, consider giving the repo a star!
+⭐ If you found this helpful, consider giving the repo a star!
