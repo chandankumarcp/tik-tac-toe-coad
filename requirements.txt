@@ -1,0 +1,4 @@
+# No third-party runtime dependencies - stdlib only.
+# Install dev/test dependencies:
+#   pip install pytest
+pytest>=7.0
