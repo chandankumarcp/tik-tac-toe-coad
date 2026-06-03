@@ -2,6 +2,18 @@
 
 A clean, production-ready command-line Tic Tac Toe game written in pure Python (stdlib only).
 
+## Description
+
+This project implements the classic **Tic Tac Toe** (noughts and crosses) game as an interactive two-player command-line application. It is structured as a proper Python package with clear separation of concerns — the board logic, game loop, player model, and CLI entry point each live in their own module.
+
+The project started as a simple script (`tictactoe.py`) and Jupyter Notebook (`tic_tac_toe.ipynb`), and has since been refactored into a well-tested, importable package suitable as a learning reference or a base for further extension (e.g. adding an AI opponent).
+
+Key design decisions:
+- **No third-party runtime dependencies** — only the Python standard library is used.
+- **Custom exceptions** make invalid-move handling explicit and easy to extend.
+- **Type hints and docstrings** throughout for readability and IDE support.
+- **Unit tests** cover all critical paths including wins, draws, and invalid input.
+
 ## Features
 
 - Full input validation (non-numeric, out-of-range, already-taken cell)
@@ -101,3 +113,14 @@ Alice (X) - enter position (0-8): 4
 Bob (O) - enter position (0-8): 0
 ...
 ```
+
+## Known Limitations & Potential Improvements
+
+- The original `tictactoe.py` script uses a flat list of 9 integers to track board state — iterating a hardcoded `wins` list on every turn is fine for a 3×3 board but would not scale to larger grids.
+- `printBoard` in the original script manually unpacks all 9 cells instead of using a loop, which is verbose and error-prone to maintain.
+- There is no AI/computer player — the game is strictly two human players sharing one terminal.
+- Input is read via blocking `input()` calls with no timeout; adding an AI mode or async I/O would require a refactor of the game loop.
+
+## License
+
+MIT
